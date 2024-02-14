@@ -1,4 +1,4 @@
-package com.bnova.techhub;
+package com.bnova.techhub.main;
 
 public class OldStyle
 {
