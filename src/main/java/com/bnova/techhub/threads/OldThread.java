@@ -9,7 +9,7 @@ void main() {
 	System.out.println(STR."Start Time: \{startTime}");
 
 	List<Thread> threads = new ArrayList<>();
-	for (int i = 0; i < 100; i++) {
+	for (int i = 0; i < 100000; i++) {
 		var thread = new Thread(Api::callApi);
 		threads.add(thread);
 		thread.start();
