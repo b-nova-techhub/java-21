@@ -9,17 +9,17 @@ void main(){
 		System.out.println(STR."Start Time: \{startTime}");
 
 		List<Thread> threads = new ArrayList<>();
-		for (int i = 0; i < 100000; i++) {
+		for (int i = 0; i < 100; i++) {
 			var thread = Thread.startVirtualThread(Api::callApi);
 			threads.add(thread);
 		}
 
 		for (Thread thread : threads) {
-		try {
-			thread.join();
-		} catch (InterruptedException e) {
-			System.err.println(STR."Failed to join thread: \{e.getMessage()}");
-		}
+			try {
+				thread.join();
+			} catch (InterruptedException e) {
+				System.err.println(STR."Failed to join thread: \{e.getMessage()}");
+			}
 		}
 
 		var endTime = LocalTime.now();

@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -37,6 +38,10 @@ void main() {
 	StringTemplate.Processor<String, RuntimeException> BNOVA = template -> template.fragments().stream().map(String::toUpperCase).collect(Collectors.joining()) + STR."; check out the podcast \{getPodcastName()}";
 
 	System.out.println(BNOVA."hello from basel, the beautiful city 'am rhy'");
+
+	StringTemplate.Processor<String, RuntimeException> LOG = template -> template.interpolate() +  STR."; TrackingID: \{new Random().nextInt(1000)}";
+
+	System.out.println(LOG."User \{name} logged in at \{LocalTime.now()}");
 
 }
 
